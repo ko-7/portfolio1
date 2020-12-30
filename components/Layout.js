@@ -2,7 +2,11 @@ import React, { Component } from 'react';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
+import style from '../static/Style';
 // import style from '../styles/globals'
+import CssBaseline from '@material-ui/core/CssBaseline';
+import Container from '@material-ui/core/Container';
+
 
 export default class Layout extends Component{
 
@@ -16,14 +20,20 @@ export default class Layout extends Component{
         {/* デザインツール関係 */}
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
-
       </Head>
 
-      {/* {style} */}
+      {style}
 
       <Header header={this.props.header} title={this.props.title} />
-        {this.props.children}
-      <Footer footer="copyright shimura" />
+
+      <React.Fragment>
+        <CssBaseline />
+        <Container maxWidth='md'>
+          {this.props.children}
+        </Container>
+      </React.Fragment>
+
+      <Footer footer="🄫 2020　Shimura" />
     </div>)
   }
 }
