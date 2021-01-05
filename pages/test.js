@@ -1,18 +1,12 @@
 import Layout from '../components/Layout'
 // import styles from '../styles/Home.module.css'
-import Introduce from '../components/Introduce'
-import HomeWelcome from '../components/HomeWelcome'
-import Work from '../components/Work'
+import Qiita from '../components/Qiita'
 
 export default function Home() {
   return (<div>
-    <div>
-      <HomeWelcome />
-    </div>
     <Layout>
       {/* <div className={styles.container}> */}
-      <Work />
-      <Introduce />
+      <Qiita />
     </Layout>
   </div>)
 }

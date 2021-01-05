@@ -33,7 +33,7 @@ export default class Layout extends Component{
         </Container>
       </React.Fragment>
 
-      <Footer footer="🄫 2020　Shimura" />
+      <Footer footer="🄫 2021" />
     </div>)
   }
 }

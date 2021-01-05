@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
+import Box from '@material-ui/core/Box';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -35,9 +36,9 @@ const useStyles = makeStyles((theme) => ({
 
 export default function OutlinedCard() {
   const classes = useStyles();
-  const bull = <span className={classes.bullet}>•</span>;
 
   return (
+    <Box display='flex' justifyContent='center'>
     <Card className={classes.root} elevation={0}>
       <CardContent className={classes.flex}>
         <div>
@@ -65,5 +66,6 @@ export default function OutlinedCard() {
         </div>
       </CardContent>
     </Card>
+    </Box>
   );
 }
