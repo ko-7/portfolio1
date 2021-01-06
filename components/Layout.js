@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import Grid from '@material-ui/core/Grid';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -20,6 +21,10 @@ export default class Layout extends Component{
         {/* デザインツール関係 */}
         <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap" />
+
+        {/* レスポンシブのテキスト */}
+        <script src="flex-font-layout_2.0.0.js"></script> 
+        <script src="flex-font-layout_editor_2.0.1.js"></script>
       </Head>
 
       {style}
@@ -28,7 +33,7 @@ export default class Layout extends Component{
 
       <React.Fragment>
         <CssBaseline />
-        <Container maxWidth='md'>
+        <Container>
           {this.props.children}
         </Container>
       </React.Fragment>

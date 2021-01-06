@@ -28,8 +28,10 @@ export default function MediaCard() {
   const classes = useStyles();
 
   return (<Box className={classes.root}>
-    <Box textAlign="center" color='black' borderBottom={1} fontSize={32} borderColor="primary.main">制作物</Box>
-    <Box display='flex' justifyContent='center' m={4} textAlign='center'>
+    <Box textAlign="center" color='black' borderBottom={1} fontSize={32} my={10}>Works</Box>
+
+    <Box display='flex' justifyContent='center' textAlign='center'>
+
       <Card className={classes.card} elevation={0}>
         <CardActionArea href="https://master.d9x0i09i3pzy1.amplifyapp.com/">
           <CardMedia className={classes.media} image="/typingmogura2.png" title="Contemplative Reptile" />
@@ -43,6 +45,7 @@ export default function MediaCard() {
           </CardContent>
         </CardActionArea>
       </Card>
+
       <Card className={classes.card} elevation={0}>
         <CardActionArea href="https://karacafe.wixsite.com/salon">
           <CardMedia className={classes.media} image="/wixSalon.png" title="Contemplative Reptile" />
@@ -56,8 +59,8 @@ export default function MediaCard() {
           </CardContent>
         </CardActionArea>
       </Card>
+
     </Box>
 
-    
   </Box>);
 }

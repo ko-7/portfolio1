@@ -3,16 +3,16 @@ import Layout from '../components/Layout'
 import Introduce from '../components/Introduce'
 import HomeWelcome from '../components/HomeWelcome'
 import Work from '../components/Work'
+import Contact from '../components/Contact'
 
 export default function Home() {
   return (<div>
-    <div>
-      <HomeWelcome />
-    </div>
+    <HomeWelcome />
     <Layout>
       {/* <div className={styles.container}> */}
       <Work />
       <Introduce />
+      <Contact />
     </Layout>
   </div>)
 }

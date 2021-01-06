@@ -1,30 +1,25 @@
-//Home画面の自己紹介
-
 import React from 'react';
-import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
-import Box from '@material-ui/core/Box';
-import Card from '@material-ui/core/Card';
-import CardActions from '@material-ui/core/CardActions';
-import CardContent from '@material-ui/core/CardContent';
-import Button from '@material-ui/core/Button';
-import Typography from '@material-ui/core/Typography';
+import { makeStyles } from '@material-ui/core/styles';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 import Avatar from '@material-ui/core/Avatar';
+import Typography from '@material-ui/core/Typography';
 import GitHubIcon from '@material-ui/icons/GitHub';
+import Button from '@material-ui/core/Button';
+import Box from '@material-ui/core/Box';
 
 const useStyles = makeStyles((theme) => ({
   root: {
-    marginTop: '80px',
-    margin: '80px 20px 0 20px',
+    flexGrow: 1,
+    marginBottom: 20,
+    color: 'black',
   },
-  flex: {
-    display: 'flex',
-    margin: '20px 0px'
-  },
-  title: {
-    fontSize: 14,
+  paper: {
+    padding: theme.spacing(2),
+    textAlign: 'center',
+    color: theme.palette.text.secondary,
   },
   avatar: {
-    display: 'flex',
     width: theme.spacing(20),
     height: theme.spacing(20),
   },
@@ -32,40 +27,41 @@ const useStyles = makeStyles((theme) => ({
     border: 'solid 1px #333',
     borderRadius: 3,
   }
-}));
+})); 
 
-export default function OutlinedCard() {
+export default function FullWidthGrid() {
   const classes = useStyles();
 
   return (
-    <Box display='flex' justifyContent='center'>
-    <Card className={classes.root} elevation={0}>
-      <CardContent className={classes.flex}>
-        <div>
-          <Avatar className={classes.avatar} alt="myphoto" src="/avatar.jpg" />
-        </div>
-        <div style={{marginLeft:40}}>
-          <Typography variant="body2" component="p">
-            {/* 名前　　 ： 志村　鴻(しむら　こう)<br /> */}
-            <br />
-            活動地域 ： 浜松<br />
-            スキル　 ： React, Next.js, AWS(EC2, Amplify)<br />
-            趣味　　 ： アコースティックギター <br />
-            一言　　 ： Windowsが好きです。<br />
-          </Typography>
-          <CardActions className={classes.flex}>
-            <Button href="https://github.com/ko-7" className={classes.button} style={{marginRight:"10px"}}>
-              <GitHubIcon size={16} style={{marginRight: '10px'}} />
-              Github
-            </Button>
-            <Button href="https://qiita.com/ko-7" className={classes.button}>
-              <img width='25px' src="/qiita.png" style={{marginRight: '10px'}} />
-              Qiita
-            </Button>
-          </CardActions>
-        </div>
-      </CardContent>
-    </Card>
-    </Box>
+    <div className={classes.root}>
+      <Box textAlign="center" color='black' borderBottom={1} fontSize={32} my={10}>About</Box>
+      <Grid container spacing={3} justify='center'>
+        <Grid item xs={7} sm={4} md={3} lg={2}>
+            <Avatar className={classes.avatar} alt="myphoto" src="/avatar.jpg" />
+        </Grid>
+        <Grid item xs={12} sm={7} md={5} lg={4}>
+          <Typography>
+              Shimura Kou<br /><br />
+              活動地域 ： 浜松<br />
+              スキル　 ： React, Next.js, AWS(EC2, Amplify)<br />
+              趣味　　 ： アコースティックギター <br />
+              <br />
+              2018年10月からHTML,CSS,JavaScriptの勉強をはじめ、<br />
+              rails、AWS（EC2、Amplify)、Vueを触り<br />
+              現在はReactでwebページを作成しています。<br />
+            </Typography>
+          <Box display='flex' justifyContent='center' m={3}>
+          <Button href="https://github.com/ko-7" className={classes.button} style={{marginRight:"10px"}}>
+            <GitHubIcon size={16} style={{marginRight: '10px'}}/>
+            Github
+          </Button>
+          <Button href="https://qiita.com/ko-7" className={classes.button}>
+            <img width='25px' src="/qiita.png" style={{marginRight: '10px'}} />
+            Qiita
+          </Button>
+          </Box>
+        </Grid>
+      </Grid>
+    </div>
   );
 }

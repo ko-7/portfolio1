@@ -7,6 +7,7 @@ export default <style>{`
     padding: 5px;
     color: #669;
     background-color: #fff;
+    font-family: serif;
   }
   herder {
     font-size: 64px;
