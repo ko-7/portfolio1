@@ -1,3 +1,5 @@
+//Aboutの部分
+
 import React from 'react';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
@@ -7,6 +9,7 @@ import Typography from '@material-ui/core/Typography';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
+import AccesibilityNew from '@material-ui/icons/AccessibilityNew';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,7 +37,11 @@ export default function FullWidthGrid() {
 
   return (
     <div className={classes.root}>
-      <Box textAlign="center" color='black' borderBottom={1} fontSize={32} my={10}>About</Box>
+      <Box display="flex" justifyContent='center' textAlign="center" color='black' borderBottom={1} fontSize={32} my={5} pt={5}>
+        <Box mt={1} mr={1}><AccesibilityNew fontSize='large' /></Box>
+        <Box>About</Box>
+      </Box>
+
       <Grid container spacing={3} justify='center'>
         <Grid item xs={7} sm={4} md={3} lg={2}>
             <Avatar className={classes.avatar} alt="myphoto" src="/avatar.jpg" />
@@ -46,22 +53,22 @@ export default function FullWidthGrid() {
               スキル　 ： React, Next.js, AWS(EC2, Amplify)<br />
               趣味　　 ： アコースティックギター <br />
               <br />
-              2018年10月からHTML,CSS,JavaScriptの勉強をはじめ、<br />
-              rails、AWS（EC2、Amplify)、Vueを触り<br />
+              2018年10月からHTML,CSS,JavaScriptの勉強をはじめ、
+              rails、AWS（EC2、Amplify)、Vueを触り、
               現在はReactでwebページを作成しています。<br />
             </Typography>
-          <Box display='flex' justifyContent='center' m={3}>
-          <Button href="https://github.com/ko-7" className={classes.button} style={{marginRight:"10px"}}>
-            <GitHubIcon size={16} style={{marginRight: '10px'}}/>
-            Github
-          </Button>
-          <Button href="https://qiita.com/ko-7" className={classes.button}>
-            <img width='25px' src="/qiita.png" style={{marginRight: '10px'}} />
-            Qiita
-          </Button>
-          </Box>
         </Grid>
       </Grid>
+      <Box display='flex' justifyContent='center' m={3}>
+        <Button href="https://github.com/ko-7" className={classes.button} style={{marginRight:"10px"}}>
+          <GitHubIcon size={16} style={{marginRight: '10px'}}/>
+          Github
+        </Button>
+        <Button href="https://qiita.com/ko-7" className={classes.button}>
+          <img width='25px' src="/qiita.png" style={{marginRight: '10px'}} />
+          Qiita
+        </Button>
+      </Box>
     </div>
   );
 }

@@ -7,6 +7,7 @@ import Typography from '@material-ui/core/Typography';
 import GitHubIcon from '@material-ui/icons/GitHub';
 import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
+import Mail from '@material-ui/icons/Mail';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,9 +35,11 @@ export default function FullWidthGrid() {
 
   return (
     <div className={classes.root}>
-      <Box textAlign="center" color='black' borderBottom={1} fontSize={32} my={10}>Contact</Box>
+      <Box display="flex" justifyContent='center' textAlign="center" color='black' borderBottom={1} fontSize={32} my={5} pt={5}>
+        <Box mt={1} mr={1}><Mail fontSize='large' /></Box>
+        <Box>Contact</Box>
+      </Box>
       
-        
     </div>
   );
 }
