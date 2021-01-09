@@ -8,6 +8,7 @@ import Button from '@material-ui/core/Button';
 import Box from '@material-ui/core/Box';
 import Mail from '@material-ui/icons/Mail';
 import TextField from '@material-ui/core/TextField';
+import Icon from '@material-ui/core/Icon';
 
 import Card from '@material-ui/core/Card';
 import CardActionArea from '@material-ui/core/CardActionArea';
@@ -19,7 +20,7 @@ import CardMedia from '@material-ui/core/CardMedia';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    marginBottom: 20,
+    marginBottom: 80,
     color: 'black',
     // backgroundColor: 'rgba(255,255,255,0.0)',
   },
@@ -43,7 +44,7 @@ export default function FullWidthGrid() {
 
   return (<Box className={classes.root}>
 
-      <Box display="flex" justifyContent='center' textAlign="center" borderBottom={1} fontSize={32} my={5} pt={5}>
+      <Box display="flex" justifyContent='center' textAlign="center" borderBottom={1} fontSize={32} my={5}>
         <Box mt={1} mr={1}><Mail fontSize='large' /></Box>
         <Box>Contact</Box>
       </Box>
@@ -67,7 +68,14 @@ export default function FullWidthGrid() {
         </Grid>
         <Grid container spacing={5} justify='center'>
           <Grid item xs={12} sm ={9} md={9} lg={6}>
-            <TextField id="inquiryContent" label="お問い合わせ内容 [必須]" multiline rows={5} variant='outlined' fullWidth />
+            <Box mt={3}>
+              <TextField id="inquiryContent" label="お問い合わせ内容 [必須]" multiline rows={5} variant='outlined' fullWidth />
+            </Box>
+          </Grid>
+        </Grid>
+        <Grid container spacing={5} justify='center'>
+          <Grid item xs={5} sm ={5} md={3} lg={3}>
+            <Button variant='contained' size='medium' color='primary' endIcon={<Icon>send</Icon>} fullWidth>送信</Button>
           </Grid>
         </Grid>
       </form>

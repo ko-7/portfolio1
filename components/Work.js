@@ -13,6 +13,7 @@ import Grid from '@material-ui/core/Grid';
 
 const useStyles = makeStyles({
   root: {
+    marginBottom: 80,
     dispray: 'flex',
     justifyContent: 'center',
   },
@@ -31,7 +32,7 @@ export default function MediaCard() {
 
   return (<Box className={classes.root}>
 
-    <Box display="flex" justifyContent='center' textAlign="center" color='black' borderBottom={1} fontSize={32} my={5} pt={5}>
+    <Box display="flex" justifyContent='center' textAlign="center" color='black' borderBottom={1} fontSize={32} my={5}>
       <Box mt={1} mr={1}><LaptopChromebook fontSize='large' /></Box>
       <Box>Works</Box>
     </Box>

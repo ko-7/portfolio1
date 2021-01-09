@@ -14,7 +14,7 @@ import AccesibilityNew from '@material-ui/icons/AccessibilityNew';
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    marginBottom: 20,
+    marginBottom: 80,
     color: 'black',
   },
   paper: {
@@ -37,7 +37,7 @@ export default function FullWidthGrid() {
 
   return (
     <div className={classes.root}>
-      <Box display="flex" justifyContent='center' textAlign="center" borderBottom={1} fontSize={32} my={5} pt={5}>
+      <Box display="flex" justifyContent='center' textAlign="center" borderBottom={1} fontSize={32} my={5}>
         <Box mt={1} mr={1}><AccesibilityNew fontSize='large' /></Box>
         <Box>About</Box>
       </Box>
