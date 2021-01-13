@@ -73,10 +73,10 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
       参考にしたページ
 
-      [https://dev.to/mubbashir10/host-next-js-app-on-aws-within-5-minutes-with-ci-cd-1o0a](https://dev.to/mubbashir10/host-next-js-app-on-aws-within-5-minutes-with-ci-cd-1o0a)
+  [https://dev.to/mubbashir10/host-next-js-app-on-aws-within-5-minutes-with-ci-cd-1o0a](https://dev.to/mubbashir10/host-next-js-app-on-aws-within-5-minutes-with-ci-cd-1o0a)
 
-      [https://aws.amazon.com/blogs/mobile/ssr-support-for-aws-amplify-javascript-libraries/]
-      (https://aws.amazon.com/blogs/mobile/ssr-support-for-aws-amplify-javascript-libraries/)
+  [https://aws.amazon.com/blogs/mobile/ssr-support-for-aws-amplify-javascript-libraries/]
+  (https://aws.amazon.com/blogs/mobile/ssr-support-for-aws-amplify-javascript-libraries/)
 
 
 ６．各ページコンポーネントの作成 welcome,Works,About,Contact(フロントのみ作成)
@@ -89,16 +89,16 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
       formikの基本
 
-      [https://qiita.com/zaburo/items/61f3aa4cfb950a64f45e](https://qiita.com/zaburo/items/61f3aa4cfb950a64f45e)
+  [https://qiita.com/zaburo/items/61f3aa4cfb950a64f45e](https://qiita.com/zaburo/items/61f3aa4cfb950a64f45e)
 
       axios使用までの記事
 
-      [https://medium.com/codefully-io/react-forms-validation-with-formik-and-material-ui-1adf0c1cae5c](https://medium.com/codefully-io/react-forms-validation-with-formik-and-material-ui-1adf0c1cae5c)
+  [https://medium.com/codefully-io/react-forms-validation-with-formik-and-material-ui-1adf0c1cae5c](https://medium.com/codefully-io/react-forms-validation-with-formik-and-material-ui-1adf0c1cae5c)
 
 
 ８．ContactのフォームつなげるためAWSコンコールからAWS SESとLAMBDAを作成
 
-[https://aws.amazon.com/premiumsupport/knowledge-center/lambda-send-email-ses/](https://aws.amazon.com/premiumsupport/knowledge-center/lambda-send-email-ses/)
+  [https://aws.amazon.com/premiumsupport/knowledge-center/lambda-send-email-ses/](https://aws.amazon.com/premiumsupport/knowledge-center/lambda-send-email-ses/)
 
 
 ９．Contactにaxios追加でAPI使ってAWS Lambdaと繋げる
