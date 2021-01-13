@@ -15,8 +15,7 @@ import Mail from '@material-ui/icons/Mail';
 import TextField from '@material-ui/core/TextField';
 import Icon from '@material-ui/core/Icon';
 
-//AWS apiのエンドポイントを変数に代入
-const contactFormEndpoint = process.env.REACT_APP_CONTACT_ENDPOINT;
+
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -31,8 +30,6 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Contact() {
   const classes = useStyles();
-  //↓　送信完了の状態を管理する変数？
-  const [isSubmitionCompleted, setSubmitionCompleted] = useState(false);
 
   return (<Box className={classes.root}>
 
@@ -50,9 +47,8 @@ export default function Contact() {
       <Formik
         //↓Formで使う変数の定義
         initialValues={{ name: '', email: '', content: '' }}
-        onSubmit={(values, {setSubmitting}) => {
-          setSubmitting(true);
-          axios.post(contactFormEndpoint,)
+        onSubmit={(values, actions) => {
+          alert(JSON.stringify(values, null, 2)); //　←意味不明
         }}
         //↓バリデーションの記述　各変数ごとにバリデーションの適用＋errorメッセージが指定できる。
         //　　バリデーションはYupにまとめられており、オブジェクトを指定するだけでOK
