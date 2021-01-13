@@ -39,7 +39,7 @@ export default function MediaCard() {
 
     <Grid container spacing={1}>
 
-      <Grid item xs={12} sm ={4} md={4} lg={4}>
+      <Grid item xs={12} sm ={6} md={4} lg={4}>
         <Box  display='flex' justifyContent='center'>
           <Card className={classes.card} elevation={0}>
             <CardActionArea href="https://master.d3it6b0ss4wmh5.amplifyapp.com/">
@@ -59,7 +59,7 @@ export default function MediaCard() {
         </Box>
       </Grid>
 
-      <Grid item xs={12} sm ={4} md={4} lg={4}>
+      <Grid item xs={12} sm ={6} md={4} lg={4}>
         <Box  display='flex' justifyContent='center'>
           <Card className={classes.card} elevation={0}>
             <CardActionArea href="https://master.d9x0i09i3pzy1.amplifyapp.com/">
@@ -79,7 +79,7 @@ export default function MediaCard() {
         </Box>
       </Grid>
 
-      <Grid item xs={12} sm ={4} md={4} lg={4}>
+      <Grid item xs={12} sm ={6} md={4} lg={4}>
         <Box  display='flex' justifyContent='center'>
           <Card className={classes.card} elevation={0}>
             <CardActionArea href="https://karacafe.wixsite.com/salon">
@@ -99,7 +99,7 @@ export default function MediaCard() {
         </Box>
       </Grid>
 
-      <Grid item xs={12} sm ={4} md={4} lg={4}>
+      <Grid item xs={12} sm ={6} md={4} lg={4}>
         <Box  display='flex' justifyContent='center'>
           <Card className={classes.card} elevation={0}>
             <CardActionArea href="https://master.d3it6b0ss4wmh5.amplifyapp.com/">
