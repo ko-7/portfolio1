@@ -37,41 +37,39 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## アプリ作成の過程
 １．next.jsでアプリ作成
 
-      npx create-next-app projectName
+    npx create-next-app projectName
 
 
 ２．Material-uiのインストール
 
-      yarn add @material-ui/core @material-ui/icons 
-
-      material-table --netwrok -timeout 100000
+    yarn add @material-ui/core @material-ui/icons material-table --netwrok -timeout 100000
 
 
 ３．必要フォルダ・フォルダの作成(計2フォルダ、4ファイル作成)
 
-      /componentsにLayout.js,Header.js,Footer.js
+  /componentsにLayout.js,Header.js,Footer.js
 
-      /static/Style.js　　←元からある/stylesのものを使うべきかも
+  /static/Style.js　　←元からある/stylesのものを使うべきかも
 
 
 ４．Layout.js(Header.js,Footer.js,Style.js)コンポーネントの作成
 
-    ※このアプリのをそのままコピペでOK！
+  ※このアプリのをそのままコピペでOK！
 
 
 ５．AWS Amplifyにデプロイ
 
-      ➀package.jsonを一部書き換え
+  ➀package.jsonを一部書き換え
 
-      "build":"next build && next export"
+  "build":"next build && next export"
 
-      ➁amplify init時、基本デフォルトでEnterだがこれだけは選ぶ
+  ➁amplify init時、基本デフォルトでEnterだがこれだけは選ぶ
 
-      Distribution Directory Path:out　　←しっかりoutにすること
+  Distribution Directory Path:out　　←しっかりoutにすること
 
-      ➂AmplifyコンソールでGitHubのリポジトリに接続(全部デフォルト、バックエンド環境：envにした←なんでもいいかも)
+  ➂AmplifyコンソールでGitHubのリポジトリに接続(全部デフォルト、バックエンド環境：envにした←なんでもいいかも)
 
-      参考にしたページ
+  参考にしたページ
 
   [https://dev.to/mubbashir10/host-next-js-app-on-aws-within-5-minutes-with-ci-cd-1o0a](https://dev.to/mubbashir10/host-next-js-app-on-aws-within-5-minutes-with-ci-cd-1o0a)
 
@@ -84,15 +82,13 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
 ７．Contactのフォームにバリデーション追加(formik,Yup使用)
 
-      "yarn add formik"
-      "yarn add yup"
+    "yarn add formik"
+    "yarn add yup"
 
-      formikの基本
-
+  formikの基本
   [https://qiita.com/zaburo/items/61f3aa4cfb950a64f45e](https://qiita.com/zaburo/items/61f3aa4cfb950a64f45e)
 
-      axios使用までの記事
-
+  axios使用までの記事
   [https://medium.com/codefully-io/react-forms-validation-with-formik-and-material-ui-1adf0c1cae5c](https://medium.com/codefully-io/react-forms-validation-with-formik-and-material-ui-1adf0c1cae5c)
 
 
