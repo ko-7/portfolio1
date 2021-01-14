@@ -69,12 +69,12 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 
   ➂AmplifyコンソールでGitHubのリポジトリに接続(全部デフォルト、バックエンド環境：envにした←なんでもいいかも)
 
-  参考にしたページ
+  【参考にしたページ】
 
 - [https://dev.to/mubbashir10/host-next-js-app-on-aws-within-5-minutes-with-ci-cd-1o0a](https://dev.to/mubbashir10/host-next-js-app-on-aws-within-5-minutes-with-ci-cd-1o0a)
 
 - [https://aws.amazon.com/blogs/mobile/ssr-support-for-aws-amplify-javascript-libraries/]
-(https://aws.amazon.com/blogs/mobile/ssr-support-for-aws-amplify-javascript-libraries/)
+<!-- (https://aws.amazon.com/blogs/mobile/ssr-support-for-aws-amplify-javascript-libraries/) -->
 
 
 ６．各ページコンポーネントの作成 welcome,Works,About,Contact(フロントのみ作成)
@@ -92,9 +92,15 @@ axios使用までの記事
 - [https://medium.com/codefully-io/react-forms-validation-with-formik-and-material-ui-1adf0c1cae5c](https://medium.com/codefully-io/react-forms-validation-with-formik-and-material-ui-1adf0c1cae5c)
 
 
-８．ContactのフォームつなげるためAWSコンコールからAWS SESとLAMBDAを作成
+８．ContactのフォームつなげるためAWSコンコールからAWS SESとLAMBDA、API gatewayを作成
+（API gateway⇒REST API,security:Open)※APIgateway作成後MappingTemplatesも編集
 
 - [https://aws.amazon.com/premiumsupport/knowledge-center/lambda-send-email-ses/](https://aws.amazon.com/premiumsupport/knowledge-center/lambda-send-email-ses/)
 
 
 ９．Contactにaxios追加でAPI使ってAWS Lambdaと繋げる
+
+#memo
+  #memo
+    #memo
+      #memo

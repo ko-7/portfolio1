@@ -16,7 +16,7 @@ import TextField from '@material-ui/core/TextField';
 import Icon from '@material-ui/core/Icon';
 
 //AWS apiのエンドポイントを変数に代入
-const contactFormEndpoint = process.env.REACT_APP_CONTACT_ENDPOINT;
+const contactFormEndpoint = "https://ly3juk6yk5.execute-api.ap-northeast-1.amazonaws.com/default/SES_portfolio1";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -26,6 +26,28 @@ const useStyles = makeStyles((theme) => ({
     // backgroundColor: 'rgba(255,255,255,0.0)',
   }
 })); 
+
+// //axiosを使用しAPIでリクエストを送る関数
+// const sendMail = (name,email,content) => {
+//   if (true){
+//     const apiUrl = "https://ly3juk6yk5.execute-api.ap-northeast-1.amazonaws.com/default/SES_portfolio1"
+//     const params = {
+//       "name": name,
+//       "email": email,
+//       "content": content,
+//     }
+//     this.$axios.post(apiUrl, params).then(response => {
+//       console.log(response),
+//       // this.name = null
+//       // this.email = null
+//       // this.content = null
+//       // this.$refs.submit_form.resetValidation()
+//       window.alert('お問い合わせの送信が完了しました。')
+//     }).catch(error => {
+//       console.log(error)
+//     })
+//   }
+// };
 
 
 
@@ -50,22 +72,52 @@ export default function Contact() {
       <Formik
         //↓Formで使う変数の定義
         initialValues={{ name: '', email: '', content: '' }}
+        //↓送信ボタンが押されたら実行される関数 axios使用でAPIのやり取り
         onSubmit={(values, {setSubmitting}) => {
           setSubmitting(true);
-          axios.post(contactFormEndpoint,)
+          axios.post(contactFormEndpoint,
+            values,
+            {
+              headers: {
+                'Access-Control-Allow-Origin': '*',
+                'Access-Control-Allow-Headers': '*',
+                'Content-Type': 'application/json',
+              }
+            },
+          ).then((response) => {
+            console.log(response),
+            setSubmitionCompleted(true);
+          });
         }}
+
         //↓バリデーションの記述　各変数ごとにバリデーションの適用＋errorメッセージが指定できる。
         //　　バリデーションはYupにまとめられており、オブジェクトを指定するだけでOK
         validationSchema = { Yup.object().shape({
-          email: Yup.string().email('※形式が違います。メールアドレスを入力してください。').required('※必須項目です。'),
-          content: Yup.string().required('※必須項目です。')
+          email: Yup.string()
+            .email('※形式が違います。メールアドレスを入力してください。')  //←メールの形式じゃなかったら表示される
+            .required('※必須項目です。'),  //←何も入力されてなかったら表示される。
+          content: Yup.string()
+            .required('※必須項目です。')
         })}
       >
-        {
-          //↓Yupから関数をpropsとして渡している。
-          ({ handleSubmit, handleChange, handleBlur, values, errors, touched }) => (
+        {/* {
+          ↓Yupから関数をpropsとして渡している。
+          ({ handleSubmit, handleChange, handleBlur, values, errors, touched }) => ( */}
+            {(props) => {
+              const {
+                values,
+                touched,
+                errors,
+                dirty,
+                isSubmitting,
+                handleChange,
+                handleBlur,
+                handleSubmit,
+                handleReset,
+              } = props;
+              return (
 
-            <form noValidate autoComplete="off">
+            <form onSubmit={handleSubmit}>
               <Grid container justify='center'>
                 <Grid item container xs={12} sm={12} md={10} lg={8} spacing={5} spacing={5} justify='center'>
 
@@ -127,6 +179,8 @@ export default function Contact() {
                         color='primary' 
                         endIcon={<Icon>send</Icon>} 
                         fullWidth
+                        // onClick={(name,email,content) => sendMail(name,email,content)} //←Vueのまねしてみた。
+                        type="submit"
                       >
                         送信
                       </Button>
@@ -137,8 +191,10 @@ export default function Contact() {
               </Grid>
             </form>
 
-          )
-        }
+);
+}}
+          {/* ) */}
+        {/* } */}
       </Formik>
 
   </Box>);
