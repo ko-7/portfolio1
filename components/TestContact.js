@@ -15,10 +15,10 @@ import Mail from '@material-ui/icons/Mail';
 import TextField from '@material-ui/core/TextField';
 import Icon from '@material-ui/core/Icon';
 
-//AWS apiのエンドポイントを変数に代入
-const contactFormEndpoint = "https://ly3juk6yk5.execute-api.ap-northeast-1.amazonaws.com/default/SES_portfolio1";
 
-const useStyles = makeStyles((theme) => ({
+
+
+const useStyles = makeStyles(() => ({
   root: {
     flexGrow: 1,
     marginBottom: 80,
@@ -27,31 +27,8 @@ const useStyles = makeStyles((theme) => ({
   }
 })); 
 
-// //axiosを使用しAPIでリクエストを送る関数
-// const sendMail = (name,email,content) => {
-//   if (true){
-//     const apiUrl = "https://ly3juk6yk5.execute-api.ap-northeast-1.amazonaws.com/default/SES_portfolio1"
-//     const params = {
-//       "name": name,
-//       "email": email,
-//       "content": content,
-//     }
-//     this.$axios.post(apiUrl, params).then(response => {
-//       console.log(response),
-//       // this.name = null
-//       // this.email = null
-//       // this.content = null
-//       // this.$refs.submit_form.resetValidation()
-//       window.alert('お問い合わせの送信が完了しました。')
-//     }).catch(error => {
-//       console.log(error)
-//     })
-//   }
-// };
-
-
-
 export default function Contact() {
+
   const classes = useStyles();
   //↓　送信完了の状態を管理する変数？
   const [isSubmitionCompleted, setSubmitionCompleted] = useState(false);
@@ -75,17 +52,24 @@ export default function Contact() {
         //↓送信ボタンが押されたら実行される関数 axios使用でAPIのやり取り
         onSubmit={(values, {setSubmitting}) => {
           setSubmitting(true);
-          axios.post(contactFormEndpoint,
+          //AWS apiのエンドポイントを変数に代入
+          const api = "https://a94m3u3ukg.execute-api.ap-northeast-1.amazonaws.com/v2";
+          //axios
+          axios.post(api,
             values,
-            {
-              headers: {
-                'Access-Control-Allow-Origin': '*',
-                'Access-Control-Allow-Headers': '*',
-                'Content-Type': 'application/json',
-              }
-            },
+
+            // ※↓↓　FrontにはCORS対策の記述は不要らしい（あるとCORSでエラーになる）
+            // {
+            //   headers: {
+            //     'Access-Control-Allow-Origin': '*',
+            //     'Access-Control-Allow-Headers': '*',
+            //     'Content-Type': 'application/json',
+            //   }
+            // },
           ).then((response) => {
             console.log(response),
+            console.log(values.email),
+            console.log('sendmail!!'),
             setSubmitionCompleted(true);
           });
         }}
@@ -108,12 +92,9 @@ export default function Contact() {
                 values,
                 touched,
                 errors,
-                dirty,
-                isSubmitting,
                 handleChange,
                 handleBlur,
                 handleSubmit,
-                handleReset,
               } = props;
               return (
 

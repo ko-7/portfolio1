@@ -3,6 +3,8 @@ import Layout from '../components/Layout';
 import TestComponent from '../components/TestComponent';
 import TestFormik from '../components/TestFormik';
 import TestContact from '../components/TestContact';
+import TestContact2 from '../components/TestContact2';
+
 
 const Tweet = (props) => {
   return(<div>
@@ -17,9 +19,10 @@ export default function Home() {
     <Layout>
       {/* <div className={styles.container}> */}
       <TestContact />
-      <TestComponent />
-      <TestFormik />
-      <Tweet content='props.content' />
+      {/* <TestComponent /> */}
+      {/* <TestFormik /> */}
+      {/* <TestContact2 /> */}
+      {/* <Tweet content='props.content' /> */}
     </Layout>
   </div>)
 }

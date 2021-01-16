@@ -95,7 +95,10 @@ axios使用までの記事
 ８．ContactのフォームつなげるためAWSコンコールからAWS SESとLAMBDA、API gatewayを作成
 （API gateway⇒REST API,security:Open)※APIgateway作成後MappingTemplatesも編集
 
-- [https://aws.amazon.com/premiumsupport/knowledge-center/lambda-send-email-ses/](https://aws.amazon.com/premiumsupport/knowledge-center/lambda-send-email-ses/)
+- SESの使い方、Lambdaとの接続
+[https://aws.amazon.com/premiumsupport/knowledge-center/lambda-send-email-ses/](https://aws.amazon.com/premiumsupport/knowledge-center/lambda-send-email-ses/)
+- Lambda作成、APIgateway作成、Lambda⇔APIgateway接続、APIgatewayの設定
+[https://codeburst.io/react-js-api-calls-to-aws-lambda-api-gateway-and-dealing-with-cors-89fb897eb04d](https://codeburst.io/react-js-api-calls-to-aws-lambda-api-gateway-and-dealing-with-cors-89fb897eb04d)
 
 
 ９．Contactにaxios追加でAPI使ってAWS Lambdaと繋げる

@@ -1,102 +1,3 @@
-// import React from 'react';
-// import { makeStyles, ThemeProvider } from '@material-ui/core/styles';
-// import Card from '@material-ui/core/Card';
-
-// const useStyles = makeStyles({
-//   oya: {
-//     width: 300,
-//     height: 300,
-//     minWidth: 275,
-//     backgroundColor: 'Blue',
-//     position: 'relative',
-//   },
-//   kodomo: {
-//     width: 50,
-//     height: 50, 
-//     backgroundColor: 'pink',
-//     position: 'absolute',
-//     top: '30%',
-//     right: '30%',
-//   },
-//   lkodomo: {
-//     width: 50,
-//     height: 50,
-//     backgroundColor: 'pink',
-//     position: 'absolute',
-//     top: '30%',
-//     right: '80%',
-//   }
-// });
-
-// function Tweet(props){
-//   return(
-//     <div>{props.content}</div>
-//   )
-// }
-
-// export default function SimpleCard() {
-//   const classes = useStyles();  
-
-//   return (<div>
-
-//     <Card className={classes.oya}>
-//       <Card className={classes.kodomo}></Card>
-//       <Card className={classes.lkodomo}></Card>
-//     </Card>
-//     <Tweet content='コンテツ' />
-
-//   </div>);
-// }
-
-//Formのテスト　表示とReactでの値受け取りまでできた
-// import React from 'react';
-// import TextField from '@material-ui/core/TextField';
-// import { makeStyles } from '@material-ui/core/styles';
-// import { StoreMallDirectoryOutlined } from '@material-ui/icons';
-
-// const useStyles = makeStyles((theme) => ({
-//   root: {
-//     '& .MuiTextField-root': {
-//       margin: theme.spacing(1),
-//       width: '25ch',
-//     },
-//   },
-// }));
-
-// export default function StateTextFields() {
-//   const classes = useStyles();
-
-//   const [name, setName] = React.useState('');
-//   const handleChangeName = (event) => {
-//     setName(event.target.value);
-//   };
-//   const [mail, setMail] = React.useState('');
-//   const handleChangeMail = (event) => {
-//     setMail(event.target.value);
-//   };
-//   const [content, setContent] = React.useState('');
-//   const handleChangeContent = (event) => {
-//     setContent(event.target.value);
-//   };
-
-//   return (
-//     <form className={classes.root} noValidate autoComplete="off">
-//       <div>
-//         <TextField id="standard0" label="Name" value={name} onChange={handleChangeName} />
-//       </div>
-//       <div>
-//         <TextField id="standard1" label="Mail" value={name} onChange={handleChangeName} />
-//       </div>
-//       <div>
-//         <TextField id="standard0" label="Content" value={mail} onChange={handleChangeMail} />
-//       </div>
-//     </form>
-//   );
-// }
-
-
-
-
 import React, { useState } from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import TextField from '@material-ui/core/TextField';
@@ -165,6 +66,7 @@ function Contact(props) {
                     },
                   ).then((resp) => {
                     setSubmitionCompleted(true);
+                    console.log('sendmail!!')
                   }
                   );
                 }}
