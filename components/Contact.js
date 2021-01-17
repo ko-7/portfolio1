@@ -1,6 +1,5 @@
 //キーボード入力内容をJSでいじる方法：https://material-ui.com/components/text-fields/
 //フォームのバリデーションの付け方（formik,yup）：https://qiita.com/zaburo/items/61f3aa4cfb950a64f45e
-//フォームとaxiosの連携：https://medium.com/codefully-io/react-forms-validation-with-formik-and-material-ui-1adf0c1cae5c
 
 import React, {useState} from 'react';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
@@ -22,7 +21,6 @@ const useStyles = makeStyles(() => ({
     flexGrow: 1,
     marginBottom: 80,
     color: 'black',
-    // backgroundColor: 'rgba(255,255,255,0.0)',
   }
 })); 
 
@@ -50,12 +48,18 @@ export default function Contact() {
         initialValues={{ name: '', email: '', content: '' }}
         //↓送信ボタンが押されたら実行される関数 axios使用でAPIのやり取り
         onSubmit={(values, {setSubmitting}) => {
+          const sendValues = {'name': values.name, 'email': values.email, 'content': values.content}
+          values.name = ''
+          values.email = ''
+          values.content = ''
+
+          //↓送信処理中かどうか監視してる？
           setSubmitting(true);
           //AWS apiのエンドポイントを変数に代入
           const api = "https://a94m3u3ukg.execute-api.ap-northeast-1.amazonaws.com/v2";
           //axios
           axios.post(api,
-            values,
+            sendValues,
 
             // ※↓↓　FrontにはCORS対策の記述は不要らしい（あるとCORSでエラーになる）
             // {
@@ -65,11 +69,11 @@ export default function Contact() {
             //     'Content-Type': 'application/json',
             //   }
             // },
+
           ).then((response) => {
-            console.log(response),
-            console.log(values.email),
-            console.log('sendmail!!'),
+            console.log(response)
             setSubmitionCompleted(true);
+            alert('お問い合わせの送信が完了しました。')
           });
         }}
 
@@ -83,19 +87,17 @@ export default function Contact() {
             .required('※必須項目です。')
         })}
       >
-        {/* {
-          ↓Yupから関数をpropsとして渡している。
-          ({ handleSubmit, handleChange, handleBlur, values, errors, touched }) => ( */}
-            {(props) => {
-              const {
-                values,
-                touched,
-                errors,
-                handleChange,
-                handleBlur,
-                handleSubmit,
-              } = props;
-              return (
+          {/* ↓Yupから関数をpropsとして渡している。 */}
+          {(props) => {
+            const {
+              values,
+              touched,
+              errors,
+              handleChange,
+              handleBlur,
+              handleSubmit,
+            } = props;
+            return (
 
             <form onSubmit={handleSubmit}>
               <Grid container justify='center'>
@@ -171,8 +173,8 @@ export default function Contact() {
               </Grid>
             </form>
 
-);
-}}
+          );
+        }}
           {/* ) */}
         {/* } */}
       </Formik>
