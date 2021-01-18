@@ -54,7 +54,7 @@ const useStyles = makeStyles({
 export default function HomeWelcome() {
   const classes = useStyles();
 
-  return (<div>
+  return (
     <Card className={classes.root} elevation={0}>
       <CardMedia className={classes.media} image="/welcomeSea.png" />
       {/* <Card className={classes.filter} />
@@ -67,5 +67,5 @@ export default function HomeWelcome() {
       </Typography>
       </CardContent> */}
     </Card>
-  </div>);
+  );
 }

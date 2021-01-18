@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import Grid from '@material-ui/core/Grid';
 import Head from 'next/head';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -38,7 +37,7 @@ export default class Layout extends Component{
         </Container>
       </React.Fragment>
 
-      <Footer footer="🄫 2021 Shimura Kou" />
+      <Footer footer="🄫 2021 Shimura" />
     </div>)
   }
 }

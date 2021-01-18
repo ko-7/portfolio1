@@ -4,9 +4,11 @@ import Introduce from '../components/Introduce'
 import HomeWelcome from '../components/HomeWelcome'
 import Work from '../components/Work'
 import Contact from '../components/Contact'
+import Box from '@material-ui/core/Box'
+
 
 export default function Home() {
-  return (<div>
+  return (<Box>
     <HomeWelcome />
     <Layout>
       {/* <div className={styles.container}> */}
@@ -14,5 +16,5 @@ export default function Home() {
       <Introduce />
       <Contact />
     </Layout>
-  </div>)
+  </Box>)
 }

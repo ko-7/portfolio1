@@ -175,8 +175,6 @@ export default function Contact() {
 
           );
         }}
-          {/* ) */}
-        {/* } */}
       </Formik>
 
   </Box>);

@@ -3,8 +3,8 @@ import css from 'styled-jsx/css';
 export default <style>{`
 
   body {
-    margin: 10px;
-    padding: 5px;
+    // margin: 10px;
+    // padding: 5px;
     color: #669;
     background-color: #fff;
     font-family: serif;
