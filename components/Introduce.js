@@ -44,7 +44,7 @@ export default function FullWidthGrid() {
 
       <Grid container spacing={3} justify='center'>
         <Grid item xs={7} sm={4} md={3} lg={2}>
-            <Avatar className={classes.avatar} alt="myphoto" src="/avatar.jpg" />
+            <Avatar className={classes.avatar} alt="myphoto" src="/totoro.png" />
         </Grid>
         <Grid item xs={12} sm={7} md={5} lg={4}>
           <Typography>
